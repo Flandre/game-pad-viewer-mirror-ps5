@@ -1,5 +1,5 @@
 const currentLocationStr = location.toString();
-const currentDomainStr = currentLocationStr.substring(0, currentLocationStr.indexOf("#")) + '?';
+const currentDomainStr = currentLocationStr.split("#")[0] + '?';
 $('#generated-url > span.pre-url').text(currentDomainStr)
 var $genURL = $('#generated-url');
 $genURL.on('click', function (c) {
@@ -26,7 +26,7 @@ $.fn.serializeObject = function () {
     var o = {};
     var a = this.serializeArray();
     $.each(a, function () {
-        //            console.log(this.value);
+        //console.log(this.value);
         if (this.value !== 'undefined' && this.value !== "") {
             o[this.name] = this.value;
         }
@@ -44,7 +44,7 @@ $(function () {
     $('#url-form').on("keyup change", function () {
         $('#generate .url').text($.param($('#url-form [name]').serializeObject()));
         $genURL.attr("data-clipboard-text", currentDomainStr + $.param($('#url-form [name]').serializeObject()));
-        //            console.log($('#url-form').serializeObject());
+        //console.log($('#url-form').serializeObject());
         return false;
     });
 });
@@ -54,7 +54,7 @@ $genURL.on("mouseenter", function () {
 $('#url-generate-reset').on("click", function (e) {
     $('#url-form')[0].reset();
     $('#generate .url').text($.param($('#url-form [name]').serializeObject()));
-    $genURL.attr("data-clipboard-text", "https://gamepadviewer.com/?" + $.param($('#url-form [name]').serializeObject()));
+    $genURL.attr("data-clipboard-text", currentDomainStr + $.param($('#url-form [name]').serializeObject()));
 });
 $('#color-picker').on('click', function (e) {
     e.preventDefault();
