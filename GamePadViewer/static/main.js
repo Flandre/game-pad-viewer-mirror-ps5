@@ -1,3 +1,6 @@
+const currentLocationStr = location.toString();
+const currentDomainStr = currentLocationStr.substring(0, currentLocationStr.indexOf("#")) + '?';
+$('#generated-url > span.pre-url').text(currentDomainStr)
 var $genURL = $('#generated-url');
 $genURL.on('click', function (c) {
     if (c.shiftKey) {
@@ -23,7 +26,7 @@ $.fn.serializeObject = function () {
     var o = {};
     var a = this.serializeArray();
     $.each(a, function () {
-//            console.log(this.value);
+        //            console.log(this.value);
         if (this.value !== 'undefined' && this.value !== "") {
             o[this.name] = this.value;
         }
@@ -36,12 +39,12 @@ $(function () {
     //
     var firstText = $('#url-form [name]').serializeObject();
     $('#generate .url').text($.param(firstText));
-    $genURL.attr("data-clipboard-text", "https://gamepadviewer.com/?" + $.param(firstText));
+    $genURL.attr("data-clipboard-text", currentDomainStr + $.param(firstText));
     $genURL.attr("data-message", "Click to copy, hold shift for HTTP link!");
     $('#url-form').on("keyup change", function () {
         $('#generate .url').text($.param($('#url-form [name]').serializeObject()));
-        $genURL.attr("data-clipboard-text", "https://gamepadviewer.com/?" + $.param($('#url-form [name]').serializeObject()));
-//            console.log($('#url-form').serializeObject());
+        $genURL.attr("data-clipboard-text", currentDomainStr + $.param($('#url-form [name]').serializeObject()));
+        //            console.log($('#url-form').serializeObject());
         return false;
     });
 });
@@ -377,7 +380,7 @@ function changeCssURL(cssURL) {
 
     if (p.test(cssURL)) {
         cssURL = cssURL.replace(p, "https://rawgit.com");
-//            console.log(cssURL);
+        //            console.log(cssURL);
         return cssURL;
     } else {
         return cssURL;
@@ -491,9 +494,9 @@ if (pnumber !== '' && $.inArray(pnumber, allowedPlayers !== -1)) {
         switchClass('#gamepads .controller', 'xbox', allowedControllers[controlType]);
     }
     $('.hide-me').remove();
-    $('html, body').css({"cssText": "background: transparent !important; overflow: hidden;"});
+    $('html, body').css({ "cssText": "background: transparent !important; overflow: hidden;" });
     gpController.addClass('half');
-    gpController.css({transform: 'scale(' + scaleSize + ') translate(-50%,-50%)', "transform-origin": '0 0'});
+    gpController.css({ transform: 'scale(' + scaleSize + ') translate(-50%,-50%)', "transform-origin": '0 0' });
 } else {
     if (controllerRebinds) {
         createUIFromMapping(controllerRebinds);
@@ -514,13 +517,13 @@ if (rotationStop !== '') {
 }
 
 if (skinStyle !== '') {
-//        console.log(skinStyle);
+    //        console.log(skinStyle);
     switchClass('#gamepads .controller', skinSwitch, 'custom');
     $('#custom-css').append('@import url("' + changeCssURL(skinStyle) + '");');
 }
 
 if (skinEdit !== '') {
-//        console.log(skinEdit);
+    //        console.log(skinEdit);
     gpController.addClass("edit");
     $('#custom-css').append('@import url("' + changeCssURL(skinEdit) + '");');
 }
