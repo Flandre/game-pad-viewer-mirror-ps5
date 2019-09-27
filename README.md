@@ -20,7 +20,7 @@ html + javascript + CSS + SVG，只使用静态内容
 
 #### GamePad Viewer 使用说明
 
-1. 访问上面构建的地址或者[gitee镜像](http://pdkst.gitee.io/game-pad-viewer-mirror/GamePadViewer/)、[原网址](http://gamepadviewer.com/)
+1. 访问上面构建的地址或者[gitee镜像](http://pdkst.gitee.io/game-pad-viewer-mirror)、[原网址](http://gamepadviewer.com/)
 2. 选择侧边栏，点击[Generate URL](http://pdkst.gitee.io/game-pad-viewer-mirror/GamePadViewer/#generate)
 3. 选择需要使用的，玩家编号，控制器皮肤等，复制上面的链接
 4. 到[OBS]([https://obsproject.com](https://obsproject.com/))中【来源】右键添加【浏览器】捕获，在【URL】中粘贴上面生成的链接
