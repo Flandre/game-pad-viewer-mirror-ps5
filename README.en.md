@@ -20,8 +20,8 @@ or
 
 #### Instructions
 
-1. Visit the address built above or [gitee image](http://pdkst.gitee.io/game-pad-viewer-mirror/GamePadViewer/), [original URL](http://gamepadviewer.com/)
-2. Select the sidebar and click [Generate URL](http://pdkst.gitee.io/game-pad-viewer-mirror/GamePadViewer/#generate)
+1. Visit the address built above or [gitee image](http://pdkst.gitee.io/game-pad-viewer-mirror/), [original URL](http://gamepadviewer.com/)
+2. Select the sidebar and click [Generate URL](http://pdkst.gitee.io/game-pad-viewer-mirror/#generate)
 3. Select the required player number, player number, controller skin, etc., copy the link above
 4. Go to [OBS]([https://obsproject.com](https://obsproject.com/))[Source] right click to add [Browser] capture, paste the generated link in [URL]
 5. enjoy!
