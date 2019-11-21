@@ -1,0 +1,10 @@
+FROM nginx:latest
+
+ADD index.html /usr/share/nginx/html/gamepad/
+ADD static/* /usr/share/nginx/html/gamepad/static/
+
+EXPOSE 80
+
+STOPSIGNAL SIGTERM
+
+CMD ["nginx", "-g", "daemon off;"]
