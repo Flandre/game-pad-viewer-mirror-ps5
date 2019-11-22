@@ -6,6 +6,18 @@
 #### 软件架构
 html + javascript + CSS + SVG，只使用静态内容
 
+#### 快速开始
+docker:
+```
+docker pull withnoword/gamepad:latest
+docker run -p 80:80 gamepad
+```
+然后通过`http://localhost/gamepad`即可访问，如果自定义端口请修改端口到自定义的
+```
+docker run -p [自定义端口]:80 gamepad
+```
+`http://localhost:[自定义端口]/gamepad`
+
 #### 安装教程
 
 1. 克隆代码到本地
@@ -25,20 +37,3 @@ html + javascript + CSS + SVG，只使用静态内容
 3. 选择需要使用的，玩家编号，控制器皮肤等，复制上面的链接
 4. 到[OBS]([https://obsproject.com](https://obsproject.com/))中【来源】右键添加【浏览器】捕获，在【URL】中粘贴上面生成的链接
 5. enjoy！
-
-#### 参与贡献
-
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
