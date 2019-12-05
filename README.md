@@ -9,12 +9,12 @@ html + javascript + CSS + SVG，只使用静态内容
 #### 快速开始
 docker:
 ```
-docker pull withnoword/gamepad:latest
-docker run -p 80:80 gamepad
+docker pull withnoword/gamepad
+docker run -d -p 80:80 withnoword/gamepad
 ```
 然后通过`http://localhost/gamepad`即可访问，如果自定义端口请修改端口到自定义的
 ```
-docker run -p [自定义端口]:80 gamepad
+docker run -d -p [自定义端口]:80 gamepad
 ```
 `http://localhost:[自定义端口]/gamepad`
 
