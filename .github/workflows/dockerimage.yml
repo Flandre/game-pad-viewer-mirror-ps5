@@ -1,7 +1,12 @@
 name: Docker Image CI
 
-on: [push]
-
+on: #[push, pull_request]
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 jobs:
 
   build:
@@ -12,8 +17,9 @@ jobs:
       run: docker build . --file Dockerfile --tag withnoword/gamepad:$(date +%s)
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Docker Push
       - uses: opspresso/action-docker@v0.2.2
         with:
-            registry-type: --docker# optional, default is --docker
+          registry-type: --docker# optional, default is --docker
