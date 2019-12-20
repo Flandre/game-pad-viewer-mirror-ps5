@@ -23,8 +23,8 @@ jobs:
       with:
         registry-type: --docker # optional, default is --docker
       env:
-        IMAGE_NAME: "gamepad"
         USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
         PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-        TAG_NAME: "$(date +%Y%m%d_%H%M%S)"
+        IMAGE_NAME: ${{ secrets.DOCKER_HUB_USERNAME + "/gamepad" }}
+        #TAG_NAME: "$(date +%Y%m%d_%H%M%S)"
         LATEST: "true"
