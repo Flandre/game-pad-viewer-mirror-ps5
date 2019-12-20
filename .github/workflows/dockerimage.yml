@@ -10,16 +10,18 @@ on: #[push, pull_request]
 jobs:
 
   build:
+    env:
+      USERNAME: ${{github.actor == 'pdkst'? withnoword:github.actor}}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag withnoword/gamepad:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${USERNAME}/gamepad:$(date +%s) && echo "username=${USERNAME}"
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Docker Push
-      - uses: opspresso/action-docker@v0.2.2
-        with:
-          registry-type: --docker# optional, default is --docker
+    - name: Docker Push
+    - uses: opspresso/action-docker@v0.2.2
+      with:
+        registry-type: --docker# optional, default is --docker
