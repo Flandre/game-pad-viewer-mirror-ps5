@@ -21,7 +21,7 @@ jobs:
     - name: Build & Push to Docker Hub
       uses: opspresso/action-docker@v0.2.2
       with:
-        registry-type: --docker# optional, default is --docker
+        registry-type: --docker # optional, default is --docker
       env:
         IMAGE_NAME: gamepad
         USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
