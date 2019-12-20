@@ -26,5 +26,5 @@ jobs:
         USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
         PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
         IMAGE_NAME: ${USERNAME}/gamepad
-        #TAG_NAME: "$(date +%Y%m%d_%H%M%S)"
+        TAG_NAME: latest #"$(date +%Y%m%d_%H%M%S)"
         LATEST: "true"
