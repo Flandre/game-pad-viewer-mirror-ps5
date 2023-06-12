@@ -401,11 +401,11 @@ var messages = [
 var message = messages[Math.floor(Math.random() * messages.length)];
 $('.update div span').html(message);
 
-var pnumber = getParameterByName('p');
-var controlType = getParameterByName('s');
+var pnumber = 1;
+var controlType = 5;
 var scaleSize = getParameterByName('sc');
 var skinStyle = getParameterByName('css');
-var skinEdit = getParameterByName('editcss');
+var skinEdit = './static/PS5_Display_Pics/PS5_White.css';
 var skinOpacity = getParameterByName('op');
 var delayTime = getParameterByName('delay');
 var deadZone = getParameterByName('dz');
